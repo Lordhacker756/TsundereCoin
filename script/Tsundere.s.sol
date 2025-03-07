@@ -2,17 +2,17 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
-import {Counter} from "../src/Counter.sol";
+import {TsundereToken} from "../src/TsundereToken.sol";
 
-contract CounterScript is Script {
-    Counter public counter;
+contract TsundereTokenScript is Script {
+    TsundereToken baaka;
 
     function setUp() public {}
 
     function run() public {
         vm.startBroadcast();
 
-        counter = new Counter();
+        baaka = new TsundereToken(1000, 10000, 10);
 
         vm.stopBroadcast();
     }
